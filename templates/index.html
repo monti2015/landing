@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load i18n %}
 {% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}"/>
-</head>
-<body>
-    <h1>This is a landing page</h1>
-    <img src="{% static 'images/django-logo-negative.png' %}" alt="Uh Oh!">
-</body>
-</html>
+<!DOCTYPE html>
+
+
+
+{% block content %}
+
+<div class='text-center'>
+    <h1>This is the context from index.html</h1>
+</div>
+
+
+{% endblock content %}
+
+
