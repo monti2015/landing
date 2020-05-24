@@ -6,14 +6,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <!-- <link rel="stylesheet" href="{% static 'css/mystyle.css' %}"/> -->
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}"/>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class='container'>
+        <h1> {% trans "Welcome to ChopLearn Jung" %} </h1>    {{ hello }}
+    </div>
+    <!-- <h1><a href="{% url 'admin:index' %}"> {% url 'admin:index' %} </a></h1> -->
+
+
+    {% get_current_language as LANGUAGE_CODE %}
+    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input type='hidden' name='text' value="{{ redirect_to }}">
+        <select name="language" id="">
+           {% get_available_languages as LANGUAGES %}
+           {% get_language_info_list for LANGUAGES as languages %}
+           {% for language in languages %}
+                <option value="{{ language.code }}" 
+                    {% if language.code == LANGUAGE_CODE %}
+                        selected
+                    {% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="GO">
+      
+    </form>
+
     <div class='text-center'>
-       <h1>This is a landing page</h1>
+       <h1> {% trans "This is a landing page" %} </h1>
     </div>
     <img src="{% static 'images/django-logo-negative.png' %}" alt="Uh Oh!">
 
