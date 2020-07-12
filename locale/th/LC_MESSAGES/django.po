@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-24 19:30+0000\n"
+"POT-Creation-Date: 2020-05-26 12:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,35 @@ msgstr ""
 msgid "Hello"
 msgstr "สวัสดี"
 
-#: templates/base.html:17
+#: main/urls.py:23
+msgid "admin/"
+msgstr ""
+
+#: templates/base.html:25
+msgid "ChopLearn"
+msgstr "ชอบเรียน"
+
+#: templates/base.html:32
+msgid "Login"
+msgstr "ลงทะเบียน"
+
+#: templates/base.html:35
+msgid "Service"
+msgstr "บริการ"
+
+#: templates/base.html:38
+msgid "Contact"
+msgstr "ติดต่อเรา"
+
+#: templates/base.html:41
+msgid "About Us"
+msgstr "เกี่ยวกับเรา"
+
+#: templates/base.html:48
 msgid "Welcome to ChopLearn Jung"
 msgstr "ยินดีต้อนรับสู่ชอบเรียนจุง"
 
-#: templates/base.html:41
+#: templates/base.html:73
 msgid "This is a landing page"
 msgstr "หน้าแรกนะจ๊ะ"
 
